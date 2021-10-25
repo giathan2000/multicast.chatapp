@@ -48,7 +48,7 @@ public class ReceiverRunner extends Thread {
         try {
             address = InetAddress.getByName(GROUP_ADDRESS);
             socket = new MulticastSocket(PORT);
-            nif = NetworkInterface.getByIndex(22);
+            nif = NetworkInterface.getByName("wlan2");
             
             skad = new InetSocketAddress(address, PORT);
             socket.joinGroup(skad, nif);
