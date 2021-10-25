@@ -51,7 +51,7 @@ public class SenderRunner {
             address = InetAddress.getByName(GROUP_ADDRESS);
             
             socket = new MulticastSocket(PORT);
-            nif = NetworkInterface.getByIndex(22);
+            nif = NetworkInterface.getByName("wlan2");
             
             Enumeration<NetworkInterface> a = NetworkInterface.getNetworkInterfaces();
             skad = new InetSocketAddress(address, PORT);
