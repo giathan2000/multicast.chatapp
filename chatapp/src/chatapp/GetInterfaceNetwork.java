@@ -15,20 +15,32 @@ import java.util.Enumeration;
  */
 public class GetInterfaceNetwork {
 
-    public static String getInterfaceNetwork() throws SocketException
-    {
-        String rs = "";
+    public static String getInterfaceNetwork() throws SocketException {
+        String rs = "Name   |     DisplayName       |    Index   |      HardwareAddress        |         isVirtual"
+                + "\n"
+                + "--------------------------------------------------------------------------------------------------------------------------------"
+                + "\n";
         Enumeration<NetworkInterface> a = NetworkInterface.getNetworkInterfaces();
         while (true) {
             try {
                 NetworkInterface n = a.nextElement();
                 System.out.println(n.getName() + "       : " + n.getDisplayName() + " | " + n.getIndex() + " | " + n.getHardwareAddress() + " | " + n.isVirtual());
-                rs+=n.getName() + "       : " + n.getDisplayName() + " | " + n.getIndex() + " | " + n.getHardwareAddress() + " | " + n.isVirtual()+"\n";
+                rs += n.getName() + "       : " + n.getDisplayName() + " | " + n.getIndex() + " | " + n.getHardwareAddress() + " | " + n.isVirtual() + "\n"
+                        //+ "\n"
+                        + "--------------------------------------------------------------------------------------------------------------------------------"
+                        + "\n";
+
             } catch (Exception e) {
                 break;
             }
-            
+
         }
+
+        rs += "Begin : \n"
+                + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+                + ""
+                + "\n"
+                + "\n";
         return rs;
     }
 }

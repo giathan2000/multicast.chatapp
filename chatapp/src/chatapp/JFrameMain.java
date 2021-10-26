@@ -122,6 +122,7 @@ public class JFrameMain extends javax.swing.JFrame {
 
         jTextAreaMainMessageContent.setColumns(20);
         jTextAreaMainMessageContent.setRows(5);
+        jTextAreaMainMessageContent.setEditable(false);
         jScrollPane1.setViewportView(jTextAreaMainMessageContent);
 
         jButton1.setText("Gửi");
@@ -250,10 +251,11 @@ public class JFrameMain extends javax.swing.JFrame {
         try {
             String name;
             if(jTextFieldName.getText().equalsIgnoreCase("")){
-                name = "An danh : ";
+                name = "An danh";
             }else{
-                name = jTextFieldName.getText()+ " : ";
+                name = jTextFieldName.getText();
             }
+            name = "["+name+"] "+ " : ";
             if (!jTextFieldMessage.getText().equalsIgnoreCase("")) {
                 senderRunner.send(name+jTextFieldMessage.getText());
                 jTextFieldMessage.setText("");
